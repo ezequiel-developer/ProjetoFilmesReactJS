@@ -11,8 +11,8 @@ const TendenciasFilmes = () => {
     const [tendenciasSemana, setTendenciasSemana] = useState([]);
     const [exibirDiaria, setExibirDiaria] = useState(false);
     const [exibirSemana, setExibirSemana] = useState(false);
-    const { formatacaoData } = useFormatacao()
     const { handleFilmeClick } = useFormatacao()
+
 
     const handleDiaria = async () => {
         try {
@@ -21,6 +21,7 @@ const TendenciasFilmes = () => {
             setTendenciasDiarias(dados.results);
             setExibirDiaria(true);
             setExibirSemana(false);
+
         } catch (error) {
             console.error('Erro ao buscar tendências diárias:', error);
         }
@@ -32,6 +33,8 @@ const TendenciasFilmes = () => {
             setTendenciasSemana(dados.results);
             setExibirSemana(true);
             setExibirDiaria(false);
+
+
         } catch (error) {
             console.error('Erro ao buscar tendências da semana:', error);
         }
@@ -62,21 +65,21 @@ const TendenciasFilmes = () => {
         <section className='m-4'>
             <div className='flex gap-4 mb-4'>
                 <button
-                    className='bg-[#00112C] text-white px-4 py-2'
+                    className={`text-white px-4 py-2 ${exibirDiaria ? 'bg-[#060e1b]' : 'bg-[#12336A]'}`}
                     onClick={handleDiaria}
                 >
                     Dia
                 </button>
 
                 <button
-                    className='bg-[#00112C] text-white px-4 py-2'
+                    className={`text-white px-4 py-2 ${exibirSemana ? 'bg-[#060e1b]' : 'bg-[#12336A]'}`}
                     onClick={handleSemana}
                 >
                     Semana
                 </button>
             </div>
 
-            <div className=' relative'>
+            <div className='relative'>
 
                 <div>
                     <button
@@ -95,7 +98,7 @@ const TendenciasFilmes = () => {
                 </div>
 
                 {exibirDiaria && (
-                    <div className='relative overflow-x-auto ' ref={carroselRef}>
+                    <div className='relative py-4  overflow-x-auto ' ref={carroselRef}>
 
 
                         <div className='flex gap-2'>
@@ -118,7 +121,7 @@ const TendenciasFilmes = () => {
                         <div className='flex gap-2'>
                             {tendenciasSemana.map((item) => (
                                 <div key={item.id} className='flex-none w-48'>
-                                     <CardFilme
+                                    <CardFilme
                                         key={item.id}
                                         filme={item}
                                         onClick={handleFilmeClick}

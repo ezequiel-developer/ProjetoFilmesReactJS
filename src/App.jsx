@@ -15,7 +15,7 @@ function App() {
       <FormatacoesProvider>
         <Header />
         <Routes>
-          <Route path="/ProjetoFilmesReactJS" element={
+          <Route path="/ProjetoFilmesReactJS/" element={
             <>
               <Headline />
               <TendenciasFIlmes />

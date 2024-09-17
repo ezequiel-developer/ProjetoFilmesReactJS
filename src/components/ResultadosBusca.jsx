@@ -11,7 +11,7 @@ const ResultadosBusca = () => {
     return (
         <section>
             <h2 className='text-center text-2xl font-bold my-8'>Resultados</h2>
-            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-8'>
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-4 md:mx-8'>
                 {resultados.length > 0 ? (
                     resultados.map((item) => (
                         <CardFilme

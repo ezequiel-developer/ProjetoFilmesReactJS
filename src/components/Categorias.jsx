@@ -45,12 +45,11 @@ const Categorias = () => {
         <section>
             <h2 className='text-center text-2xl uppercase font-bold my-8'>Categorias</h2>
 
-            {/* Div para permitir rolagem suave por gesto */}
-            <div className='flex text-white gap-4 my-8 flex-nowrap overflow-x-auto whitespace-nowrap scroll-smooth hide-scrollbar'>
+            <div className='flex text-white gap-4 my-8 flex-nowrap md:flex-wrap md:justify-center overflow-x-auto mx-4 whitespace-nowrap'>
                 {categorias.map((item) => (
                     <ul key={item.id} className='list-none'>
                         <li
-                            className={`bg-[#133165] px-4 py-1 ${categoriaAtiva === item.id ? 'bg-red-500' : ''}`}
+                            className={`bg-[#12336A] px-4 py-1 ${categoriaAtiva === item.id ? 'bg-[#060e1b]' : 'bg-[#12336A]'}`}
                         >
                             <button onClick={() => handleCategoria(item.id)}>
                                 {item.name}
@@ -60,7 +59,8 @@ const Categorias = () => {
                 ))}
             </div>
 
-            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-8'>
+
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-2 md:mx-8'>
                 {filmesCategoriaSelecionada.length > 0 ? (
                     filmesCategoriaSelecionada.map((item) => (
                         <CardFilme

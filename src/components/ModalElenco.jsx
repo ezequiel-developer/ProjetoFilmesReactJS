@@ -10,6 +10,10 @@ const ModalElenco = ({ todosAtores, todosProducao, onClose }) => {
         setQuantidadeExibida(quantidadeExibida + 10); // Carrega mais 10 itens
     };
 
+    const obterImagemOuPadrao = (caminho) => {
+        return caminho ? `${BASE_IMAGE_URL}${caminho}` : 'caminho/para/imagem/padrao.png'; // Substitua pelo caminho da imagem padrão
+    };
+
     return (
         <div className='bg-black flex fixed justify-center items-center z-10 bg-opacity-80 inset-0 h-screen w-full'>
             <div className='bg-black p-10 w-[80%] h-[70vh] relative overflow-hidden'>

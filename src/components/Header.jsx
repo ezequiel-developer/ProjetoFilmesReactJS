@@ -11,7 +11,7 @@ const Header = () => {
     <header className="bg-[#00112D] shadow-black shadow-sm fixed h-14 flex items-center justify-center w-full top-0 z-10">
       {/* Menu Desktop */}
       <nav className='hidden md:flex items-center justify-between w-full h-14 px-6'>
-        <span className='text-white font-bold text-xl'>Logo</span>
+        <span className='text-white font-bold text-xl'>CineExplorer</span>
         <ul className='flex gap-6'>
           <li><a href="#" className='text-white hover:text-gray-300'>Filmes</a></li>
           <li><a href="#" className='text-white hover:text-gray-300'>Séries</a></li>
