@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { FaTimes, FaBars } from 'react-icons/fa'; // Ícones de fechar (X) e menu (hambúrguer)
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null); // Ref para o contêiner do menu dropdown
 
-  const handleMenu = () => {
-    setMenuOpen(!menuOpen);
+  // Função para lidar com cliques fora do menu
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
   };
 
+  // Adiciona e remove o listener para cliques fora do menu
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <header className="bg-[#00112D] shadow-black shadow-sm fixed h-14 flex items-center justify-center w-full top-0 z-10">
+    <header className="bg-[#00112D] shadow-black shadow-sm fixed h-14 flex items-center justify-between w-full top-0 z-20 px-6">
       {/* Menu Desktop */}
-      <nav className='hidden md:flex items-center justify-between w-full h-14 px-6'>
+      <nav className='hidden md:flex items-center w-full h-full'>
         <span className='text-white font-bold text-xl'>CineExplorer</span>
-        <ul className='flex gap-6'>
+        <ul className='flex gap-6 ml-auto'>
+          <li><a href="/ProjetoFilmesReactJS/" className='text-white hover:text-gray-300'>Home</a></li>
           <li><a href="#" className='text-white hover:text-gray-300'>Filmes</a></li>
           <li><a href="#" className='text-white hover:text-gray-300'>Séries</a></li>
           <li><a href="#" className='text-white hover:text-gray-300'>Documentários</a></li>
@@ -20,23 +34,30 @@ const Header = () => {
       </nav>
 
       {/* Menu Mobile */}
-      <nav className='flex md:hidden items-center justify-between w-full h-14 px-6'>
-        <span className='text-white font-bold text-xl'>Logo</span>
-        <button 
-          onClick={handleMenu} 
-          className='text-white focus:outline-none'
+      <nav className='md:hidden flex items-center justify-between w-full h-full'>
+        <span className='text-white font-bold text-xl'>CineExplorer</span>
+        <div
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="relative cursor-pointer p-4"
         >
-          {menuOpen ? 'Fechar' : 'Abrir'}
-        </button>
+          <div className="transition-transform duration-300 ease-in-out">
+            {menuOpen ? (
+              <FaTimes className='text-2xl text-white' />
+            ) : (
+              <FaBars className='text-2xl text-white' />
+            )}
+          </div>
+        </div>
       </nav>
 
       {/* Dropdown Menu Mobile */}
       {menuOpen && (
-        <div className='absolute top-14 right-0 w-[50%] h-screen bg-yellow-50'>
-          <ul className='flex flex-col gap-4 p-4'>
-            <li><a href="#" className='hover:text-gray-600'>Filmes</a></li>
-            <li><a href="#" className='hover:text-gray-600'>Séries</a></li>
-            <li><a href="#" className='hover:text-gray-600'>Documentários</a></li>
+        <div ref={menuRef} className='absolute top-14 right-0 w-[50%] h-screen bg-[#12336A]'>
+          <ul className='flex flex-col gap-4 text-center text-xl text-white w-full'>
+            <li className='hover:bg-[#060E1B] transition-colors duration-300 py-4'><a href="/ProjetoFilmesReactJS/">Home</a></li>
+            <li className='hover:bg-[#060E1B] transition-colors duration-300 py-4'><a href="#" className='text-white hover:text-gray-300'>Filmes</a></li>
+            <li className='hover:bg-[#060E1B] transition-colors duration-300 py-4'><a href="#" className='text-white hover:text-gray-300'>Séries</a></li>
+            <li className='hover:bg-[#060E1B] transition-colors duration-300 py-4'><a href="#" className='text-white hover:text-gray-300'>Documentários</a></li>
           </ul>
         </div>
       )}

@@ -9,7 +9,7 @@ const UltimosLancamentos = () => {
     const [ultimosLancamentos, setUltimosLancamentos] = useState([]);
     const [index, setIndex] = useState(0);
 
-    const { formatacaoData } = useFormatacao();
+    const { formatacaoData, handleFilmeClick } = useFormatacao();
 
     const listarUltimosLancamentos = async () => {
         try {
@@ -42,7 +42,7 @@ const UltimosLancamentos = () => {
         onSwipedLeft: exibirProximo,
         onSwipedRight: exibirAnterior,
         preventDefaultTouchmoveEvent: true,  // Previne o comportamento padrão de movimentação
-        trackMouse: true  // Permite rastreamento com o mouse, útil para testes em desktop
+        trackMouse: true  // Permite rastreamento com o mouse, testes em desktop
     });
 
     return (
@@ -60,7 +60,7 @@ const UltimosLancamentos = () => {
 
                         {/* Renderiza o filme atual baseado no índice */}
                         {ultimosLancamentos[index] && (
-                            <div key={ultimosLancamentos[index].id} className='flex flex-col items-center md:flex-row gap-4 '>
+                            <div key={ultimosLancamentos[index].id} className='flex flex-col items-center md:flex-row gap-4 cursor-pointer' onClick={()=> handleFilmeClick(ultimosLancamentos[index].id)}>
                                 <div className='flex-shrink-0 flex justify-center items-center'>
                                     {ultimosLancamentos[index].poster_path ? (
                                         <img

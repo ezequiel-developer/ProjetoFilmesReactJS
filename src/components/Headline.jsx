@@ -10,7 +10,7 @@ const Headline = () => {
         backgroundPosition: isMobile ? 'left bottom' : 'center center',
         backgroundSize: 'cover', // Ajusta o tamanho da imagem para cobrir o container
         backgroundRepeat: 'no-repeat', // Evita que a imagem se repita
-        height: '90vh', // Define uma altura para o container
+        height: '60vh', // Define uma altura para o container
         width: '100%', // Define a largura para o container
     };
 
@@ -30,9 +30,12 @@ const Headline = () => {
     return (
         <section
             style={sectionStyle}
-            className='text-white flex justify-center items-center flex-col px-4 md:px-8 lg:px-16'
+            className='text-white relative flex justify-center items-center flex-col px-4 md:px-8 lg:px-16'
         >
-            <div className='text-center max-w-4xl w-full'>
+
+        <div className='absolute inset-0 bg-black opacity-40'></div>
+
+            <div className='text-center z-10 max-w-4xl w-full'>
                 <h2 className='text-3xl font-bold uppercase'>Mergulhe no Mundo dos Filmes e Séries</h2>
                 <p className='mb-4'>Descubra filmes, séries e trailers com informações detalhadas.</p>
 

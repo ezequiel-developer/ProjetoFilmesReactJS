@@ -21,7 +21,7 @@ const Categorias = () => {
 
     useEffect(() => {
         listarCategorias();
-        listarFilmesPorCategoria(28); // Inicialmente carregar filmes da categoria com ID 28 (exemplo)
+        listarFilmesPorCategoria(28); // Inicialmente carregar filmes da categoria com ID 28 
         setCategoriaAtiva(28);
     }, []);
 

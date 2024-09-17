@@ -84,14 +84,14 @@ const TendenciasFilmes = () => {
                 <div>
                     <button
                         onClick={scrollEsquerdo}
-                        className='bg-black text-white px-1 py-3  text-4xl  absolute left-0 top-1/2 -translate-y-[50%] z-10'
+                        className='hidden md:block bg-black text-white px-1 py-3  text-4xl  absolute left-0 top-1/2 -translate-y-[50%] z-10'
 
                     >&lt;</button>
 
 
                     <button
                         onClick={scrollDireito}
-                        className='bg-black text-white px-1 py-3  text-4xl  absolute right-0 top-1/2 -translate-y-[50%] z-10'
+                        className='hidden md:block bg-black text-white px-1 py-3  text-4xl  absolute right-0 top-1/2 -translate-y-[50%] z-10'
 
 
                     >&gt;</button>

@@ -11,7 +11,7 @@ const ModalElenco = ({ todosAtores, todosProducao, onClose }) => {
     };
 
     const obterImagemOuPadrao = (caminho) => {
-        return caminho ? `${BASE_IMAGE_URL}${caminho}` : 'caminho/para/imagem/padrao.png'; // Substitua pelo caminho da imagem padrão
+        return caminho ? `${BASE_IMAGE_URL}${caminho}` : 'caminho/para/imagem/padrao.png';
     };
 
     return (
@@ -19,13 +19,13 @@ const ModalElenco = ({ todosAtores, todosProducao, onClose }) => {
             <div className='bg-black p-10 w-[80%] h-[70vh] relative overflow-hidden'>
                 <div className='flex gap-2 mb-4'>
                     <button
-                        className={`px-4 py-2 rounded ${mostrarElenco ? 'bg-red-600' : 'bg-red-400'}`}
+                        className={`px-4 py-2 rounded ${mostrarElenco ? 'bg-[#12336A]' : 'bg-[#060e1b]'}`}
                         onClick={() => setMostrarElenco(true)}
                     >
                         Elenco
                     </button>
                     <button
-                        className={`px-4 py-2 rounded ${!mostrarElenco ? 'bg-red-600' : 'bg-red-400'}`}
+                        className={`px-4 py-2 rounded ${!mostrarElenco ? 'bg-[#12336A]' : 'bg-[#060e1b]'}`}
                         onClick={() => setMostrarElenco(false)}
                     >
                         Produção
@@ -85,7 +85,7 @@ const ModalElenco = ({ todosAtores, todosProducao, onClose }) => {
                                 {quantidadeExibida < todosProducao.length && (
                                     <button
                                         onClick={carregarMais}
-                                        className='mt-4 px-4 py-2 bg-red-400 rounded text-white font-bold'
+                                        className='mt-4 px-4 py-2 bg-[#12336A] rounded text-white font-bold'
                                     >
                                         Mostrar mais
                                     </button>

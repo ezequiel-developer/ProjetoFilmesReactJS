@@ -28,7 +28,6 @@ export const FormatacoesProvider = ({ children }) => {
         goTo(`/ProjetoFilmesReactJS/detalhes/${id}`); // Usa a função goTo do contexto para redirecionar
     };
 
-
      // Formatação do orçamento
      const formatarMoeda = (valor) => {
         return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'USD' });
