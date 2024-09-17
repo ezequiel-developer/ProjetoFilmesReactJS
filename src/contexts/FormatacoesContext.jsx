@@ -25,7 +25,7 @@ export const FormatacoesProvider = ({ children }) => {
 
     // Função para lidar com o clique em filmes
     const handleFilmeClick = (id) => {
-        goTo(`/detalhes/${id}`); // Usa a função goTo do contexto para redirecionar
+        goTo(`/ProjetoFilmesReactJS/detalhes/${id}`); // Usa a função goTo do contexto para redirecionar
     };
 
 
