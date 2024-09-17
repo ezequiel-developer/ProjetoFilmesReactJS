@@ -15,7 +15,7 @@ function App() {
       <FormatacoesProvider>
         <Header />
         <Routes>
-          <Route path="/" element={
+          <Route path="/ProjetoFilmesReactJS" element={
             <>
               <Headline />
               <TendenciasFIlmes />
@@ -23,13 +23,13 @@ function App() {
               <Categorias />
             </>
           } />
-          <Route path="/resultadosBusca" element={
+          <Route path="/ProjetoFilmesReactJS/resultadosBusca" element={
             <>
               <Headline />
               <ResultadosBusca />
             </>
           } />
-          <Route path="/detalhes/:id" element={<Detalhes />} />
+          <Route path="/ProjetoFilmesReactJS/detalhes/:id" element={<Detalhes />} />
         </Routes>
       </FormatacoesProvider>
     </Router>
