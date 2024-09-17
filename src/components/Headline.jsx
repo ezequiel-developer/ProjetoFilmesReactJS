@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Headline = () => {
     const sectionStyle = {
-        backgroundImage: 'url(/movie-background-collage.jpg)', // Caminho para a imagem na pasta public
+        backgroundImage: 'url(./movie-background-collage.jpg)', // Caminho para a imagem na pasta public
         backgroundSize: 'cover',  // Faz a imagem cobrir toda a área da section
         backgroundPosition: 'center', // Centraliza a imagem
         height: '60vh', // Define a altura da section (opcional, ajuste conforme necessário)
