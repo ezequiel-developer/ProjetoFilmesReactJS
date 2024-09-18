@@ -6,8 +6,9 @@ import UltimosLancamentos from './components/UltimosLancamentos';
 import Categorias from './components/Categorias';
 import Detalhes from './components/Detalhes';
 import { FormatacoesProvider } from './contexts/FormatacoesContext';
-import ModalTrailer from './components/ModalTrailer';
 import ResultadosBusca from './components/ResultadosBusca';
+import PageFilmes from './pages/PageFilmes';
+import PageSeries from './pages/PageSeries';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
             </>
           } />
           <Route path="/ProjetoFilmesReactJS/detalhes/:id" element={<Detalhes />} />
+          <Route path="/ProjetoFilmesReactJS/PageFilmes" element={<PageFilmes />} />
+          <Route path="/ProjetoFilmesReactJS/PageSeries" element={<PageSeries />} />
         </Routes>
       </FormatacoesProvider>
     </Router>

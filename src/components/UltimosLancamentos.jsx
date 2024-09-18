@@ -15,7 +15,6 @@ const UltimosLancamentos = () => {
         try {
             const dados = await obterLançamentosRecentes();
             setUltimosLancamentos(dados.results);
-            console.log('Ultimos lançamentos:', dados);
         } catch (error) {
             console.error('Erro ao obter lançamentos:', error);
         }

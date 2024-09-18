@@ -49,7 +49,7 @@ const Categorias = () => {
                 {categorias.map((item) => (
                     <ul key={item.id} className='list-none'>
                         <li
-                            className={`bg-[#12336A] px-4 py-1 ${categoriaAtiva === item.id ? 'bg-[#060e1b]' : 'bg-[#12336A]'}`}
+                            className={` px-4 py-1 ${categoriaAtiva === item.id ? 'bg-[#060e1b]' : 'bg-[#12336A]'}`}
                         >
                             <button onClick={() => handleCategoria(item.id)}>
                                 {item.name}

@@ -23,6 +23,7 @@ const Detalhes = () => {
         const carregarDetalhes = async () => {
             try {
                 const dados = await obterFilmePorId(id);
+                console.log('detalhes-filme', dados)
                 setFilme(dados);
                 const dadosTrailer = await obterVideosPorId(id);
                 const dadosElenco = await obterElencoPorId(id);
@@ -130,7 +131,6 @@ const Detalhes = () => {
                                 Ver mais
                             </button>
                         </div>
-
 
                     </div>
                 </div>

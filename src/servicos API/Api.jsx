@@ -1,9 +1,8 @@
-const API_KEY = '968ebe9e6464c39e6dec64da6fee2af6'; 
+const API_KEY = '968ebe9e6464c39e6dec64da6fee2af6';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 // Função para fazer uma requisição GET à API do TMDb
 const buscarDaApi = async (endpoint, params = {}) => {
-  // Adiciona o parâmetro de idioma para obter dados em português
   const url = new URL(`${BASE_URL}${endpoint}`);
   url.search = new URLSearchParams({ ...params, api_key: API_KEY, language: 'pt-BR' });
 
@@ -47,19 +46,35 @@ export const obterFilmePorId = (id) => {
   return buscarDaApi(`/movie/${id}`);
 };
 
-// src/servicos API/Api.js
-
 // Função para obter vídeos do filme
 export const obterVideosPorId = async (id) => {
   return buscarDaApi(`/movie/${id}/videos`);
 };
 
+// Função para obter elenco do filme
 export const obterElencoPorId = async (id) => {
   return buscarDaApi(`/movie/${id}/credits`);
 };
 
-
 // Função para buscar filmes por nome
 export const buscarFilmesPorNome = (nome) => {
   return buscarDaApi('/search/movie', { query: nome });
+};
+
+// Função para obter filmes ordenados
+export const obterFilmesOrdenados = (parametroOrdenacao, categoria) => {
+  const params = {
+    sort_by: parametroOrdenacao,
+    with_genres: categoria,
+  };
+  return buscarDaApi('/discover/movie', params);
+};
+
+// Função para obter séries ordenadas
+export const obterSeriesOrdenadas = (parametroOrdenacao, categoria) => {
+  const params = {
+    sort_by: parametroOrdenacao,
+    with_genres: categoria,
+  };
+  return buscarDaApi('/discover/tv', params);
 };

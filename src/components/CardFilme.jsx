@@ -13,7 +13,6 @@ const CardFilme = ({ filme, onClick }) => {
                 className='w-full h-auto object-cover'
             />
             <div className='p-2 absolute inset-x-0 bottom-0 text-white bg-black bg-opacity-75'>
-                <h3 className='text-center text-md'>{filme.title}</h3>
                 <p className='text-[10px] text-center'>Lançamento: {formatacaoData(filme.release_date)}</p>
             </div>
         </div>

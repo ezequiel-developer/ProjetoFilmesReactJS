@@ -63,6 +63,7 @@ const TendenciasFilmes = () => {
 
     return (
         <section className='m-4'>
+            <h2 className='font-bold text-2xl mb-1 ml-1 uppercase'>Têndencias</h2>
             <div className='flex gap-4 mb-4'>
                 <button
                     className={`text-white px-4 py-2 ${exibirDiaria ? 'bg-[#060e1b]' : 'bg-[#12336A]'}`}
