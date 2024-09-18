@@ -42,7 +42,7 @@ const Categorias = () => {
     };
 
     return (
-        <section>
+        <section className='pb-4'>
             <h2 className='text-center text-2xl uppercase font-bold my-8'>Categorias</h2>
 
             <div className='flex text-white gap-4 my-8 flex-nowrap md:flex-wrap md:justify-center overflow-x-auto mx-4 whitespace-nowrap'>

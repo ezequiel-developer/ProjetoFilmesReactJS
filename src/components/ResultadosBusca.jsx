@@ -21,7 +21,7 @@ const ResultadosBusca = () => {
                         />
                     ))
                 ) : (
-                    <p className='text-center text-white'>Nenhum resultado encontrado.</p>
+                    <p className='text-black'>Nenhum resultado encontrado.</p>
                 )}
             </div>
         </section>
