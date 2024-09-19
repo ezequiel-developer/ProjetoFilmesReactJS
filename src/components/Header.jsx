@@ -22,14 +22,14 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-[#00112D] shadow-black shadow-sm fixed h-14 flex items-center justify-between w-full top-0 z-20 px-6">
+    <header className="bg-[#00112D] shadow-black shadow-sm fixed h-14 w-full top-0 z-20 px-6">
       {/* Menu Desktop */}
       <nav className='hidden md:flex items-center w-full h-full'>
         <span className='text-white font-bold text-xl'><Link to="/ProjetoFilmesReactJS/" className='text-white hover:text-gray-300'>CineExplorer</Link></span>
         <ul className='flex gap-6 ml-auto'>
           <li><Link to="/ProjetoFilmesReactJS/" className='text-white hover:text-gray-300'>Home</Link></li>
           <li><Link to="/ProjetoFilmesReactJS/PageFilmes" className='text-white hover:text-gray-300'>Filmes</Link></li>
-          <li><Link to="/ProjetoFilmesReactJS/PageSeries" className='text-white hover:text-gray-300'>Series</Link></li>
+          <li><Link to="/ProjetoFilmesReactJS/PageSeries" className='text-white hover:text-gray-300'>Séries</Link></li>
         </ul>
       </nav>
 
